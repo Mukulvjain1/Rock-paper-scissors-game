@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock, Paper, Scissors</title>
+
+   
+  </head>
+  <body>
+    <div id="main">
+      <div id="Section1">
+        <div id="title">
+          <h1>ROCK PAPER SCISSORS</h1>
+        </div>
+        <div id="score">
+          <p>Score</p>
+          <h1 id="score-val">0</h1>
+        </div>
+      </div>
+      <div id="game-section">
+        <div class="sec">
+          <div id="paper" class="icon">
+            <img
+              src="/images/icon-paper.svg"
+              alt=""
+              onclick="close_gameSection(); handleClick('paper')"
+            />
+          </div>
+        </div>
+        <div class="sec">
+          <div id="scissor" class="icon">
+            <img src="/images/icon-scissors.svg" alt=""
+            onclick="close_gameSection(); handleClick('scissor')"" />
+          </div>
+        </div>
+        <div class="sec">
+          <div id="stone" class="icon">
+            <img src="/images/icon-rock.svg" alt=""
+            onclick="close_gameSection(); handleClick('stone')"" />
+          </div>
+        </div>
+      </div>
+
+      <div id="game-zone">
+        <div class="selection">
+          <div class="sec1">
+            <p>YOUR PICK</p>
+            <div class="circle">
+              <div id="selected-paper" class="sel">
+                <img
+                  src="/images/icon-paper.svg"
+                  alt=""
+                  onclick="close_gameSection()"
+                  class="paper-sel"
+                />
+              </div>
+
+              <div class="sec1">
+                <div id="selected-scissor" class="icon">
+                  <img src="/images/icon-scissors.svg" alt=""
+                  onclick="close_gameSection(); handleClick('scissor')"" />
+                </div>
+              </div>
+              <div class="sec1">
+                <div id="selected-stone" class="icon">
+                  <img src="/images/icon-rock.svg" alt=""
+                  onclick="close_gameSection(); handleClick('stone')"" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="res">
+            <h1>YOU HAVE <span id="result">WON</span> THE GAME</h1>
+            <button class="resbtn" onclick="open_gameSection()">Play again</button>
+          </div>
+          <div class="sec1">
+            <p>THE HOUSE PICKED</p>
+            <div class="circle"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="rules">
+      <div id="rules-1">
+        <h2>Rules</h2>
+        <i class="ri-close-line" onclick="closerules()"></i>
+      </div>
+      <img src="/images/image-rules.svg" alt="" />
+    </div>
+    <div id="rules-btn">
+      <button class="rule-btn" onclick="openrules()">Rules</button>
+    </div>
+
+    <div class="attribution">
+      <a href="https://twitter.com/mukulvjain13" target="_blank"
+        >Connect with me on Twitter</a
+      >
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/Mukulvjain1" target="_blank">Mukul Jain</a>.
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
