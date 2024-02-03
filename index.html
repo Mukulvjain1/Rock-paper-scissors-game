@@ -16,8 +16,6 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>Rock, Paper, Scissors</title>
-
-   
   </head>
   <body>
     <div id="main">
@@ -84,14 +82,37 @@
           </div>
           <div class="res">
             <h1>YOU HAVE <span id="result">WON</span> THE GAME</h1>
-            <button class="resbtn" onclick="open_gameSection()">Play again</button>
+            <button class="resbtn" onclick="open_gameSection()">
+              Play again
+            </button>
           </div>
           <div class="sec1">
             <p>THE HOUSE PICKED</p>
-            <div class="circle"></div>
+            <div class="circle">
+              <div id="selected-paper" class="sel house-paper">
+                <img
+                  src="/images/icon-paper.svg"
+                  alt=""
+                  onclick="close_gameSection()"
+                  class="paper-sel"
+                />
+              </div>
+
+              <div class="sec1">
+                <div id="selected-scissor" class="sel house-scissor">
+                  <img src="/images/icon-scissors.svg" alt=""
+                  onclick="close_gameSection(); handleClick('scissor')"" />
+                </div>
+              </div>
+              <div class="sec1">
+                <div id="selected-stone" class="sel house-stone">
+                  <img src="/images/icon-rock.svg" alt=""
+                  onclick="close_gameSection(); handleClick('stone')"" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
 

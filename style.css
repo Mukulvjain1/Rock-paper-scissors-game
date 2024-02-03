@@ -114,8 +114,9 @@ body {
   color: white;
 }
 .sec1 {
-    display: flex;
-  flex-direction: column;
+ display: flex; 
+   flex-direction: column; 
+  position:relative;
 }
 .sec1 > p {
   font-size: 30px;
@@ -125,37 +126,59 @@ body {
 #selected-paper > img,
 #selected-scissor > img,
 #selected-stone > img {
-  margin: 5px;
-  height: 10rem;
+  height: 20rem;
   border-radius: 50%;
   object-fit: contain;
   background-color: #dddddd;
-  width: 10rem;
+  width: 20rem;
   padding: 20px;
-  align-items: center;
   cursor: pointer;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  
+}
+#selected-paper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#selected-paper {
+  background-color: #5471f2;
+  
+}
+#selected-scissor {
+  background-color: #eaa622;
+}
+#selected-stone {
+  background-color: #dd3d58;
+}
+#selected-paper,
+#selected-scissor,
+#selected-stone {
+  width: 300px;
+  height: 300px;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
 }
-#selected-paper {
-  width: 100%;
-  height: 100%;
-  background-color: #5471f2;
-  display: none;
+
+#selected-paper > img,
+#selected-scissor > img,
+#selected-stone > img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: contain;
 }
-#selected-scissor {
-  width: 100%;
-  height: 100%;
-  background-color: #eaa622;
-  display: none;
-}
-#selected-stone {
-  width: 100%;
-  height: 100%;
-  background-color: #dd3d58;
-  display: none;
-}
+
 .sel {
   height: 125px;
   width: 125px;
@@ -169,7 +192,7 @@ body {
   height: 300px;
   width: 300px;
   border-radius: 50%;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 #rules {
   position: absolute;

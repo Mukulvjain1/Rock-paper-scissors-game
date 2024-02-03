@@ -5,6 +5,9 @@ let finalres = document.querySelector("#result");
 let paper = document.querySelector("#selected-paper");
 let scissor = document.querySelector("#selected-scissor");
 let stone = document.querySelector("#selected-stone");
+let house_paper = document.querySelector(".house-paper");
+let house_scissor = document.querySelector(".house-scissor");
+let house_stone = document.querySelector(".house-stone");
 let score=document.querySelector("#score-val");
 let computerChoice;
 let userChoice;
@@ -16,13 +19,17 @@ function resetComputerChoice() {
   if (num == 1) {
     computerChoice = "paper";
     console.log(`computer selected paper`);
+    house_paper.style.display = "block";
   } else if (num == 2) {
     computerChoice = "scissor";
     console.log(`computer selected scissor`);
+    house_scissor.style.display = "block";
   } else {
     computerChoice = "stone";
     console.log(`computer selected stone`);
+    house_stone.style.display = "block";
   }
+
 }
 
 resetComputerChoice(); // Initialize computerChoice on page load
