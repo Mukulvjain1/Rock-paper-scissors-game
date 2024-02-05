@@ -3,20 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Rock, Paper, Scissors</title>
+    <title>Document</title>
   </head>
+
   <body>
     <div id="main">
       <div id="Section1">
@@ -28,115 +22,107 @@
           <h1 id="score-val">0</h1>
         </div>
       </div>
-      <div id="game-section">
-        <div class="sec">
-          <div id="paper" class="icon">
-            <img
-              src="/images/icon-paper.svg"
-              alt=""
-              onclick="close_gameSection(); handleClick('paper')"
-            />
-          </div>
+      <div class="game-section">
+        <div class="select select-paper">
+          <img
+            src="/images/icon-paper.svg"
+            alt="paper"
+            onclick="close_gameSection(), handleClick('paper')"
+          />
         </div>
-        <div class="sec">
-          <div id="scissor" class="icon">
-            <img src="/images/icon-scissors.svg" alt=""
-            onclick="close_gameSection(); handleClick('scissor')"" />
-          </div>
+        <div class="select select-scissor">
+          <img
+            src="/images/icon-scissors.svg"
+            alt="scissors"
+            onclick="close_gameSection(), handleClick('scissor')"
+          />
         </div>
-        <div class="sec">
-          <div id="stone" class="icon">
-            <img src="/images/icon-rock.svg" alt=""
-            onclick="close_gameSection(); handleClick('stone')"" />
-          </div>
+        <div class="select select-rock">
+          <img
+            src="/images/icon-rock.svg"
+            alt="rock"
+            onclick="close_gameSection(), handleClick('rock')"
+          />
         </div>
       </div>
 
-      <div id="game-zone">
-        <div class="selection">
-          <div class="sec1">
-            <p>YOUR PICK</p>
-            <div class="circle">
-              <div id="selected-paper" class="sel">
-                <img
-                  src="/images/icon-paper.svg"
-                  alt=""
-                  onclick="close_gameSection()"
-                  class="paper-sel"
-                />
-              </div>
-
-              <div class="sec1">
-                <div id="selected-scissor" class="icon">
-                  <img src="/images/icon-scissors.svg" alt=""
-                  onclick="close_gameSection(); handleClick('scissor')"" />
-                </div>
-              </div>
-              <div class="sec1">
-                <div id="selected-stone" class="icon">
-                  <img src="/images/icon-rock.svg" alt=""
-                  onclick="close_gameSection(); handleClick('stone')"" />
-                </div>
-              </div>
+      <div class="game-zone">
+        <div class="user-selection">
+          <h1>You Picked</h1>
+          <div class="circle">
+            <div class="user-selected selected-paper">
+              <img src="/images/icon-paper.svg" alt="" id="paper" />
+            </div>
+            <div class="user-selected selected-scissor">
+              <img
+                src="/images/icon-scissors.svg
+                        "
+                alt=""
+                id="scissors"
+              />
+            </div>
+            <div class="user-selected selected-rock">
+              <img
+                src="/images/icon-rock.svg
+                        "
+                alt=""
+                id="rock"
+              />
             </div>
           </div>
-          <div class="res">
-            <h1>YOU HAVE <span id="result">WON</span> THE GAME</h1>
-            <button class="resbtn" onclick="open_gameSection()">
-              Play again
-            </button>
-          </div>
-          <div class="sec1">
-            <p>THE HOUSE PICKED</p>
-            <div class="circle">
-              <div id="selected-paper" class="sel house-paper">
-                <img
-                  src="/images/icon-paper.svg"
-                  alt=""
-                  onclick="close_gameSection()"
-                  class="paper-sel"
-                />
-              </div>
-
-              <div class="sec1">
-                <div id="selected-scissor" class="sel house-scissor">
-                  <img src="/images/icon-scissors.svg" alt=""
-                  onclick="close_gameSection(); handleClick('scissor')"" />
-                </div>
-              </div>
-              <div class="sec1">
-                <div id="selected-stone" class="sel house-stone">
-                  <img src="/images/icon-rock.svg" alt=""
-                  onclick="close_gameSection(); handleClick('stone')"" />
-                </div>
-              </div>
+        </div>
+        <div class="res">
+          <span id="result"></span>
+          <button class="resbtn" onclick="open_gameSection()">
+            Play again
+          </button>
+        </div>
+        <div class="home-selection">
+          <h1>Home Picked</h1>
+          <div class="circle">
+            <div class="home-selected home-paper">
+              <img src="/images/icon-paper.svg" alt="" id="home-paper" />
+            </div>
+            <div class="home-selected home-scissor">
+              <img
+                src="/images/icon-scissors.svg
+                        "
+                alt=""
+                id="scissors"
+              />
+            </div>
+            <div class="home-selected home-stone">
+              <img
+                src="/images/icon-rock.svg
+                        "
+                alt=""
+                id="rock"
+              />
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div id="rules">
-      <div id="rules-1">
-        <h2>Rules</h2>
-        <i class="ri-close-line" onclick="closerules()"></i>
+      <div id="rules">
+        <div id="rules-1">
+          <h2>Rules</h2>
+          <i class="ri-close-line" onclick="closerules()"></i>
+        </div>
+        <img src="/images/image-rules.svg" alt="" />
       </div>
-      <img src="/images/image-rules.svg" alt="" />
+      <div id="rules-btn">
+        <button class="rule-btn" onclick="openrules()">Rules</button>
+      </div>
     </div>
-    <div id="rules-btn">
-      <button class="rule-btn" onclick="openrules()">Rules</button>
-    </div>
-
     <div class="attribution">
-      <a href="https://twitter.com/mukulvjain13" target="_blank"
-        >Connect with me on Twitter</a
-      >
+      <a href="https://twitter.com/mukulvjain13" target="_blank" class="twitter"
+        ><i class="ri-twitter-fill blue"></i> Connect with me on Twitter</a
+      ><br />
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by
       <a href="https://github.com/Mukulvjain1" target="_blank">Mukul Jain</a>.
     </div>
-    <script src="index.js"></script>
+    <script src="trial.js"></script>
   </body>
 </html>
