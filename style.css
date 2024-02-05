@@ -101,7 +101,7 @@ body {
 /* Final result Page starts here */
 .game-zone{
   width: 90%;
-  height: 70vh;
+  height: 55vh;
   margin: 20px;
   display: flex;
   justify-content: space-evenly;

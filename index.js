@@ -10,11 +10,11 @@ let house_stone = document.querySelector(".home-stone");
 let finalRes = document.querySelector("#result");
 let scoreSpan = document.querySelector("#score-val");
 let randomNumber = 0;
-let score = 2;
+let score = 0;
 let previousRandomNumber;
 let userChoice;
-// let computerChoice;
-
+let computerChoice;
+alert("Click on Rules button to get to know about rules ")
 function openrules() {
   rules.style.display = "block";
 }
@@ -36,14 +36,13 @@ function open_gameSection() {
   paper.style.display = "none";
   scissor.style.display = "none";
   rock.style.display = "none";
-  //   resetComputerChoice(); // Reset the computerChoice when opening the game section
 }
 function handleClick(choice) {
   userChoice = choice;
   console.log("User chose:", choice);
-  if (userChoice == "paper") {
+  if (userChoice === 'paper') {
     paper.style.display = "flex";
-  } else if (userChoice == "scissor") {
+  } else if (userChoice === 'scissor') {
     scissor.style.display = "flex";
   } else {
     rock.style.display = "flex";
@@ -71,7 +70,6 @@ function houseChoice() {
     house_paper.style.display = "none";
     house_scissor.style.display = "none";
   }
-  handleGameResult();
 }
 function generateUniqueRandomNumber() {
   do {
