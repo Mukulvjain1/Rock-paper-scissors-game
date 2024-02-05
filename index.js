@@ -8,7 +8,9 @@ let house_paper = document.querySelector(".home-paper");
 let house_scissor = document.querySelector(".home-scissor");
 let house_stone = document.querySelector(".home-stone");
 let finalRes = document.querySelector("#result");
+let scoreSpan = document.querySelector("#score-val");
 let randomNumber = 0;
+let score = 2;
 let previousRandomNumber;
 let userChoice;
 // let computerChoice;
@@ -69,7 +71,7 @@ function houseChoice() {
     house_paper.style.display = "none";
     house_scissor.style.display = "none";
   }
-  handleGameResult()
+  handleGameResult();
 }
 function generateUniqueRandomNumber() {
   do {
@@ -79,21 +81,27 @@ function generateUniqueRandomNumber() {
   return randomNumber;
 }
 
-function handleGameResult() {
-  let resultSpan = document.getElementById("result");
-  if (userChoice === "scissor" && computerChoice === "paper") {
-    resultSpan.innerText = `You win! `;
-  } else if (userChoice === "stone" && computerChoice === "scissor") {
-    resultSpan.innerText = `You win! `;
-  } else if (userChoice === "paper" && computerChoice === "stone") {
-    resultSpan.innerText = `You win! `;
-  } else if (computerChoice === "scissor" && userChoice === "paper") {
-    resultSpan.innerText = `You Lost`;
-  } else if (computerChoice === "stone" && userChoice === "scissor") {
-    resultSpan.innerText = `You Lost`;
-  } else if (computerChoice === "paper" && userChoice === "stone") {
-    resultSpan.innerText = `You Lost`;
+let resultSpan = document.getElementById("result");
+if (userChoice === computerChoice) {
+  resultSpan.innerText = "It's a tie!";
+} else {
+  let userWin = true;
+  if (userChoice == "stone") {
+    userWin = computerChoice === "paper" ? true:false ;
+  } else if (userChoice === "paper") {
+    userWin = computerChoice == "scissor" ? true:false;
   } else {
-    resultSpan.innerText = `It's a tie!`;
+    userWin = computerChoice === "stone" ? true:false;
   }
+  printWinner(userWin);
 }
+const printWinner = (userWin) => {
+  if (userWin) {
+    resultSpan.innerText = "YOU WIN !";
+    score++;
+    scoreSpan.innerText = score;
+  } else {
+    resultSpan.innerText = "Sorry,Computer Wins !";
+  }
+};
+console.log(score)
